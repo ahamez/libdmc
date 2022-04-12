@@ -1,0 +1,58 @@
+// $Author: ahamez $
+// $Revision: 629 $
+// $Date: 2006-08-07 15:23:09 +0200 (Mon, 07 Aug 2006) $
+
+#include "big_simple_model/state.hh"
+#include "big_simple_model/state_succ_iterator.hh"
+
+using namespace std;
+
+namespace big_simple_model{
+
+//////////////////////////////////////////////////////////////////////
+	
+state::state(int i)
+	: state_coding(i)
+{}
+		
+//////////////////////////////////////////////////////////////////////
+
+state::~state()
+{}
+	
+//////////////////////////////////////////////////////////////////////
+	
+// void
+// state::get_content(const void** data , size_t* size) const
+// {
+// 	*size = sizeof(int);
+// 	*data = &state_coding;
+// }
+	
+//////////////////////////////////////////////////////////////////////
+
+size_t
+state::hash() const
+{
+	return this->state_coding;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+// bool
+// state::operator==(const dmc_state& as) const
+// {
+// 	return (reinterpret_cast<const state&>(as)).state_coding == this->state_coding;
+// }
+
+//////////////////////////////////////////////////////////////////////
+
+// rg::abstract_state_succ_iterator* 
+// state::get_succ_iterator()
+// {
+// 	return new state_succ_iterator(this);
+// }
+
+//////////////////////////////////////////////////////////////////////
+
+}  // namespace
